@@ -8,7 +8,7 @@ Desenvolva uma pequena aplicação web de venda de imóveis onde um vendedor faz
 
 Clone o baixe o repositório, após acesse a pasta do projeto.
 
-Configurar env.sample
+Configurar env.sample -> renomeie o arquivo para .env
 
 ```
     DATABASE_URL="postgresql://postgres:postgres_senha@localhost:5432/banco?schema=public"
