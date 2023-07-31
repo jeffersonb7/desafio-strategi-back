@@ -30,8 +30,7 @@ router.post('/login', async (req, res, next) => {
     const token = jwt.sign({ id }, process.env.SECRET, {
       expiresIn: TIME_AUTHENTICATION
     })
-
-    return res.status(200).json({ username: user.username , token });
+    return res.status(200).json({ token });
   }
   return res.status(500).json({message: 'Username ou senha inválidos!'});
 })
