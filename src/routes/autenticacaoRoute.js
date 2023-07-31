@@ -4,6 +4,8 @@ const router = Router()
 const prisma = require('../db/prisma')
 const bcrypt = require("bcryptjs")
 
+const TIME_AUTHENTICATION = 3000
+
 router.post('/login', async (req, res, next) => {
   if(!!req.body.username && !!req.body.password) {
     
@@ -26,7 +28,7 @@ router.post('/login', async (req, res, next) => {
     delete user.password
     const id = user.id
     const token = jwt.sign({ id }, process.env.SECRET, {
-      expiresIn: 300 
+      expiresIn: TIME_AUTHENTICATION
     })
 
     return res.status(200).json({ username: user.username , token });
